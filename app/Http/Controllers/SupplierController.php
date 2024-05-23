@@ -9,7 +9,6 @@ class SupplierController extends Controller
 {
     public function index(){
         $suppliers=Supplier::all();
-        dd($suppliers);
         return view('admin.supplier',compact('suppliers'));
     }
     public function create(){
