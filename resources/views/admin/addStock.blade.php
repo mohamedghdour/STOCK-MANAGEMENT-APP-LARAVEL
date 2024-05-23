@@ -1,6 +1,7 @@
 @extends('layout.main')
 <div class="content-wrapper" style="min-height: 1302.4px;" bis_skin_checked="1">
 
+
     <section class="content-header">
 
 
@@ -24,8 +25,14 @@
               <input type="text" name="price" class="form-control" id="price">
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Supplier</label>
-              <input type="text" name="supplier" class="form-control" id="supplier">
+              <label for="exampleInputPassword1">Supplier</label><br>
+              <select class="form-select form-select-lg mb-3" name="supplier_id" >
+                <option aria-readonly="true" >Selectionner Fournisseur</option>
+                @foreach($suppliers as $supplier)
+                  <option value="{{$supplier->id}}">{{$supplier->name}}</option>
+                @endforeach
+                  <option value=""><a href="google.com">sdds</a></option>
+              </select>
             </div>
             <button type="submit" class="btn btn-primary">Ajouter</button>
           </form>

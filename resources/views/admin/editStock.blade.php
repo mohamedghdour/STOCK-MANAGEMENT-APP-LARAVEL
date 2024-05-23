@@ -1,5 +1,8 @@
 @extends('layout.main')
 <div class="content-wrapper" style="min-height: 1302.4px;" bis_skin_checked="1">
+  @if(session('success'))
+  <x-alert type="success" :message="session('success')" />
+  @endif
 
     <section class="content-header">
 
@@ -26,7 +29,7 @@
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Supplier</label>
-              <input value="{{$product->supplier}}" type="text" name="supplier" class="form-control" id="supplier">
+              <input value="{{$product->supplier_id}}" type="text" name="supplier_id" class="form-control" id="supplier">
             </div>
             <button type="submit" class="btn btn-primary">Enregistrer</button>
           </form>

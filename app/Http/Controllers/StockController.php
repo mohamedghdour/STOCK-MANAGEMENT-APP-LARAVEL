@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Product;
+use App\Models\Supplier;
 use Illuminate\Http\Request;
 
 class StockController extends Controller
@@ -106,7 +107,7 @@ class StockController extends Controller
         'category'=>$request->category,
         'price'=>$request->price,
         'quantity'=>$request->quantity,
-        'supplier'=>$request->supplier];
+        'supplier_id'=>$request->supplier_id];
         $product=Product::find($request->id);
         $product->fill($values)->save();
         return to_route('stock.show')->with('success','Produit a ete modifier avec success');
@@ -114,15 +115,22 @@ class StockController extends Controller
     } 
 
     public function showadd(){
-        return view('admin.addStock');
+        $suppliers=Supplier::all();
+        return view('admin.addStock',compact('suppliers'));
     }
 
     public function add(Request $request){
+        $request->validate([
+            'name'=>'required',
+            'category'=>'required',
+            'quantity'=>'required|integer',
+            'supplier_id'=>'required|integer',
+        ]);
         $productinfo=['name'=>$request->name,
         'category'=>$request->category,
         'price'=>$request->price,
         'quantity'=>$request->quantity,
-        'supplier'=>$request->supplier];
+        'supplier_id'=>$request->supplier_id];
         Product::create($productinfo);
         return to_route('stock.show')->with('success','Produit a ete ajoute avec success');
 

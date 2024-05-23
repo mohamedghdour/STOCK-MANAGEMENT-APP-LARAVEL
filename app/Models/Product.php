@@ -13,6 +13,10 @@ class Product extends Model
         'category',
         'quantity',
         'price',
-        'supplier',
+        'supplier_id',
     ];
+
+    public function supplier(){
+        return $this->belongsTo(Supplier::class);
+    }
 }

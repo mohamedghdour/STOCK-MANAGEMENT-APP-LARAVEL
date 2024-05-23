@@ -40,7 +40,7 @@
                 <td>{{$product->category}}</td>
                 <td>{{$product->quantity}}</td>
                 <td>{{$product->price}}</td>
-                <td>{{$product->supplier}}</td>
+                <td>{{$product->supplier->name}}</td>
                 <td><a style="color: blue" class="px-3" href="{{route('edit.show',$product->id)}}"><i class="fa-solid fa-pen-to-square"></i></a><i style="color: red" onclick="Cdelete({{$product->id}})" role="button" class="fa-solid fa-trash px-3"></i><form  id="delete{{$product->id}}" method="POST" action="{{route("product.delete",$product->id)}}">@csrf @method('delete') </form> </td>
             </tr>
             @endforeach
