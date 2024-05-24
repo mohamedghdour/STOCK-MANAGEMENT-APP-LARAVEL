@@ -10,19 +10,19 @@
             @csrf
             <div class="form-group">
               <label for="exampleInputEmail1">Nom de produit</label>
-              <input type="text" name="name" class="form-control" id="nomproduit">
+              <input required type="text" name="name" class="form-control" id="nomproduit">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Categorie</label>
-              <input type="text" name="category" class="form-control" id="categorie">
+              <input required type="text" name="category" class="form-control" id="categorie">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Quantity</label>
-              <input type="number" name="quantity" class="form-control" id="quantity">
+              <input required type="number" name="quantity" class="form-control" id="quantity">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Prix unitaire</label>
-              <input type="text" name="price" class="form-control" id="price">
+              <input required type="number" name="price" class="form-control" id="price">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Supplier</label><br>

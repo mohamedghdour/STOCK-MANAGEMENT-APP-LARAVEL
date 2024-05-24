@@ -16,7 +16,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{route("dashboard.show")}}" class="nav-link 
-                    @if(request()->path()=="dashboard")
+                    @if(request()->segment(1)=="dashboard")
                         {{"active"}}
                     @endif
                 ">
@@ -30,7 +30,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{route("stock.show")}}" class="nav-link 
-                    @if(request()->path()=="stock")
+                    @if(request()->segment(1)=="stock")
                         {{"active"}}
                     @endif
                 ">
@@ -44,7 +44,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{route("supplier.index")}}" class="nav-link 
-                    @if(request()->path()=="fournisseurs")
+                    @if(request()->segment(1)=="fournisseurs")
                         {{"active"}}
                     @endif
                 ">
@@ -58,7 +58,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{route("commande.index")}}" class="nav-link 
-                    @if(request()->path()=="commandes")
+                    @if(request()->segment(1)=="commandes")
                         {{"active"}}
                     @endif
                 ">
@@ -72,7 +72,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{route("user.show")}}" class="nav-link 
-                    @if(request()->path()=="user")
+                    @if(request()->segment(1)=="user")
                         {{"active"}}
                     @endif
                 ">

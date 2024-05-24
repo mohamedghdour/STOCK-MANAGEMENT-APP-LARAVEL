@@ -14,7 +14,7 @@ class SupplierController extends Controller
     public function create(){
         return view('admin.addsupplier');
     }
-
+    
     public function store(Request $request){
         $supplier=New Supplier;
         $supplier->name=$request->name;

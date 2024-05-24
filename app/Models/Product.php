@@ -19,4 +19,6 @@ class Product extends Model
     public function supplier(){
         return $this->belongsTo(Supplier::class);
     }
+
+   
 }

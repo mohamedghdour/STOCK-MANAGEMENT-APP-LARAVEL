@@ -13,23 +13,23 @@
             @method("PUT")
             <div class="form-group">
               <label for="exampleInputEmail1">Nom de produit</label>
-              <input value="{{$product->name}}" type="text" name="name" class="form-control" id="nomproduit">
+              <input required value="{{$product->name}}" type="text" name="name" class="form-control" id="nomproduit">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Categorie</label>
-              <input value="{{$product->category}}" type="text" name="category" class="form-control" id="categorie">
+              <input required value="{{$product->category}}" type="text" name="category" class="form-control" id="categorie">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Quantity</label>
-              <input value="{{$product->quantity}}" type="number" name="quantity" class="form-control" id="quantity">
+              <input required value="{{$product->quantity}}" type="number" name="quantity" class="form-control" id="quantity">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Prix unitaire</label>
-              <input value="{{$product->price}}" type="text" name="price" class="form-control" id="price">
+              <input required value="{{$product->price}}" type="number" name="price" class="form-control" id="price">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Supplier</label>
-              <input value="{{$product->supplier_id}}" type="text" name="supplier_id" class="form-control" id="supplier">
+              <input required value="{{$product->supplier_id}}" type="text" name="supplier_id" class="form-control" id="supplier">
             </div>
             <button type="submit" class="btn btn-primary">Enregistrer</button>
           </form>

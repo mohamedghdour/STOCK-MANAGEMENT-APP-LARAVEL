@@ -14,11 +14,11 @@ class CommandeController extends Controller
      */
     public function index()
     {
-        $commandes=Commande::distinct()->pluck('id');
-        foreach($commandes as $id){
-            $commandes_products=Commande::where('id',$id)->sum('quantity');
-        }
-        dd($commandes_products);
+        $commandes = Commande::selectRaw('id, sum(quantity) as total_quantity, created_at')
+        ->groupBy('id', 'created_at')
+        ->get();
+        
+
         return view('admin.commandes',compact('commandes'));
     }
 
@@ -27,8 +27,17 @@ class CommandeController extends Controller
      */
     public function create()
     {
-        $products=Product::all();
+        $products = Product::where('quantity', '>', 0)->get();
         return view('admin.addCommande',compact('products'));
+    }
+
+    public function details($id){
+        $commandes = Commande::where('id', $id) ->findMany($id);
+        foreach($commandes as $commande){
+            $products_id[]=$commande->product->id;
+        }
+        $productsinfo=Product::findMany($products_id);
+        return view('admin.commandeDetails',compact('commandes','productsinfo'));
     }
 
     /**

@@ -36,3 +36,4 @@ Route::get('/commandes',[CommandeController::class,'index'])->name('commande.ind
 Route::get('/commandes/create',[CommandeController::class,'create'])->name('commande.create')->middleware('auth');
 Route::post('/commandes/create',[CommandeController::class,'store'])->name('commande.store')->middleware('auth');
 Route::delete('/commandes/delete/{id}',[CommandeController::class,'delete'])->name('commande.delete')->middleware('auth');
+Route::get('/commandes/details/{id}',[CommandeController::class,'details'])->name('commande.details')->middleware('auth');

@@ -26,14 +26,16 @@
                 <th>ID Commande</th>
                 <th>Total Producs</th>
                 <th>Date Commande</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($commandes as $id => $commande)
+            @foreach($commandes as $commande)
             <tr>
-                <td>{{$id}}</td>
-                <td>{{$commande[$id-1]->product_id}}</td>
-                <td>{{$commande[$id-1]->created_at}}</td>
+                <td>{{$commande->id}}</td>
+                <td>{{$commande->total_quantity}}</td>
+                <td>{{$commande->created_at}}</td>
+                <td class="d-flex justify-content-center"><a class="btn btn-success mr-4" href="{{route('commande.details',$commande->id)}}"><i class="fa-solid fa-eye"></i></a></td>
             </tr>
             @endforeach
             <!-- Add more rows as needed -->

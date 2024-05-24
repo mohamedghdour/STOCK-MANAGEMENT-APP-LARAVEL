@@ -9,15 +9,15 @@
             @csrf
             <div class="form-group">
               <label for="exampleInputEmail1">Nom de fourniseur</label>
-              <input type="text" name="name" class="form-control" id="nomproduit">
+              <input required type="text" name="name" class="form-control" id="nomproduit">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Adresse (optional)</label>
-              <input type="text" name="adress" class="form-control" id="categorie">
+              <input required type="text" name="adress" class="form-control" id="categorie">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Numero de telephone (optional)</label>
-              <input type="number" name="phone_number" class="form-control" id="quantity">
+              <input required type="number" name="phone_number" class="form-control" id="quantity">
             </div>
             <button type="submit" class="btn btn-primary">Ajouter</button>
           </form>

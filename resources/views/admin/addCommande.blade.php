@@ -36,7 +36,7 @@
                         <td>{{$product->name}}</td>
                         <td class="d-flex justify-content-center" ><a onclick="document.getElementById('input{{$product->id}}').stepDown()" class="btn btn-danger" >
                           <i  class="fa-solid fa-minus"></i>
-                            </a><input readonly value="0" name="{{$product->id}}" id="input{{$product->id}}" min="0" style="width: 10%;text-align:center;" type="number"><a onclick="document.getElementById('input{{$product->id}}').stepUp()" class="btn btn-success" >
+                            </a><input readonly value="0" name="{{$product->id}}" id="input{{$product->id}}" min="0" max="{{$product->quantity}}" style="width: 10%;text-align:center;" type="number"><a onclick="document.getElementById('input{{$product->id}}').stepUp()" class="btn btn-success" >
                               <i  class="fa-solid fa-plus"></i>
                                 </a></td>
                         {{-- <td><a style="color: blue" class="px-3" href="{{route('supplier.edit',$fournisseur->id)}}"><i class="fa-solid fa-pen-to-square"></i></a><i style="color: red" onclick="Cdelete({{$fournisseur->id}})" role="button" class="fa-solid fa-trash px-3"></i>
