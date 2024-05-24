@@ -57,6 +57,20 @@
           <li class="nav-item menu-open">
             <ul class="nav nav-treeview">
               <li class="nav-item">
+                <a href="{{route("commande.index")}}" class="nav-link 
+                    @if(request()->path()=="commandes")
+                        {{"active"}}
+                    @endif
+                ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Commandes</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item menu-open">
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
                 <a href="{{route("user.show")}}" class="nav-link 
                     @if(request()->path()=="user")
                         {{"active"}}

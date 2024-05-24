@@ -41,7 +41,7 @@
                 <td>{{$product->quantity}}</td>
                 <td>{{$product->price}}</td>
                 <td>{{$product->supplier->name}}</td>
-                <td><a style="color: blue" class="px-3" href="{{route('edit.show',$product->id)}}"><i class="fa-solid fa-pen-to-square"></i></a><i style="color: red" onclick="Cdelete({{$product->id}})" role="button" class="fa-solid fa-trash px-3"></i><form  id="delete{{$product->id}}" method="POST" action="{{route("product.delete",$product->id)}}">@csrf @method('delete') </form> </td>
+                <td class="d-flex justify-content-center" ><a class="btn btn-info mr-4"  class="px-3" href="{{route('edit.show',$product->id)}}"><i class="fas fa-pencil-alt"></i></a><a onclick="Cdelete({{$product->id}})" class="btn btn-danger"><i   role="button" class="fas fa-trash"></i></a><form  id="delete{{$product->id}}" method="POST" action="{{route("product.delete",$product->id)}}">@csrf @method('delete') </form> </td>
             </tr>
             @endforeach
             <!-- Add more rows as needed -->

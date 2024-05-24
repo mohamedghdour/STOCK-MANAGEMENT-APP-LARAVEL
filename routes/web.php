@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
@@ -30,3 +31,8 @@ Route::post('/fournisseurs/add',[SupplierController::class,'store'])->name('supp
 Route::get('/fournisseurs/edit/{id}',[SupplierController::class,'edit'])->name('supplier.edit')->middleware('auth');
 Route::put('/fournisseurs/update/{id}',[SupplierController::class,'update'])->name('supplier.update')->middleware('auth');
 Route::delete('/fournisseurs/{id}',[SupplierController::class,'delete'])->name('supplier.delete')->middleware('auth');
+
+Route::get('/commandes',[CommandeController::class,'index'])->name('commande.index')->middleware('auth');
+Route::get('/commandes/create',[CommandeController::class,'create'])->name('commande.create')->middleware('auth');
+Route::post('/commandes/create',[CommandeController::class,'store'])->name('commande.store')->middleware('auth');
+Route::delete('/commandes/delete/{id}',[CommandeController::class,'delete'])->name('commande.delete')->middleware('auth');
