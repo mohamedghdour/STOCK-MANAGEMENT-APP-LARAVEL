@@ -25,7 +25,8 @@ class DashboardController extends Controller
             $data[]=$stat->total_quantity;
         }
         
-        $totalcommandes=Commande::groupBy('id')->count();
+        
+        $totalcommandes=Commande::all()->groupBy('id')->count();
         $produitsvendu=Commande::sum('quantity');
         $produitsenstock=Product::sum('quantity');
         $totalsuppliers=Supplier::count();
