@@ -110,7 +110,7 @@
 
             type: 'bar', // Specify the type of chart
             data: {
-                labels: getLastFiveMonthsLabels()
+                labels: getLastFiveMonthsLabels().reverse()
                 , datasets: [{
                     label: 'Total des produits vendu trie par mois'
                     , data: [{{$data[0]}},{{$data[1]}},{{$data[2]}},{{$data[3]}},{{$data[4]}}]
